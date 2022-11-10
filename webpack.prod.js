@@ -1,7 +1,7 @@
 const path = require('path');
 const common = require('./webpack.common');
 const { merge } = require('webpack-merge');
-const cleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const miniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
@@ -10,7 +10,7 @@ const htmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = merge(common, {
 	mode: 'production',
 	output: {
-		filename: 'main.[contentHash].js',
+		filename: '[name].[contenthash].bundle.js',
 		path: path.resolve(__dirname, 'dist'),
 	},
 	optimization: {
@@ -27,14 +27,16 @@ module.exports = merge(common, {
 			}),
 		],
 	},
-	plugin: [
-		new miniCssExtractPlugin({
-			filename: '[name].[contentHash].css',
-		}),
-		new cleanWebpackPlugin(),
+	plugins: [
+		new miniCssExtractPlugin({ filename: '[name].[contenthash].css' }),
+		new CleanWebpackPlugin(),
 	],
 	module: {
-		test: /\.scss$/,
-		use: [miniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+		rules: [
+			{
+				test: /\.scss$/,
+				use: [miniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+			},
+		],
 	},
 });
