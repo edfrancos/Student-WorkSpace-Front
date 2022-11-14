@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
 	mode: 'development',
-	entry: './src/ts/index.ts',
+	entry: './src/ts/index.tsx',
 	output: {
 		assetModuleFilename: 'img/[name]-[hash].[ext]',
 	},
@@ -13,6 +13,6 @@ module.exports = {
 		],
 	},
 	resolve: {
-		extensions: ['.tsx', '.ts', '.js'],
+		extensions: ['.tsx', '.ts', '.jsx', '.js'],
 	},
 };
