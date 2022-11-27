@@ -9,7 +9,7 @@ const App = () => {
 	const [GenState, setGenState] = useState<GenState>(beginState);
 
 	const navBarHandle = (button: string): void => {
-		console.log(button === 'signIn');
+		console.log(button);
 		if (button == 'signIn') {
 			setGenState((prev) => {
 				let value = !prev.Navbar.statusAcount.signIn;

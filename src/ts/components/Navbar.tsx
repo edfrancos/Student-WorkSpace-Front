@@ -23,16 +23,18 @@ export const Navbar = (props: navProps) => {
 
 				<div className='buttons'>
 					<input
+						id='signIn'
 						className='simple-button'
 						type='button'
 						value='Sign In'
-						onClick={() => props.methods[0]('signIn')}
+						onClick={(ev) => props.methods[0](ev.currentTarget.id)}
 					/>
 					<input
+						id='signUp'
 						className='button'
 						type='button'
 						value='Get Started'
-						onClick={() => props.methods[0]('signUp')}
+						onClick={(ev) => props.methods[0](ev.currentTarget.id)}
 					/>
 				</div>
 			</nav>
