@@ -1,0 +1,17 @@
+@import './utilities.scss';
+// Functions
+
+header {
+	width: 100%;
+	padding-top: 2.5rem;
+	padding-bottom: 2.5rem;
+	position: relative;
+}
+
+header nav {
+	padding-left: 2.5rem;
+	padding-right: 2.5rem;
+	font-size: 0.875rem;
+	line-height: 1.5rem;
+	@include createFlex(null, null, null, space-between, center);
+}

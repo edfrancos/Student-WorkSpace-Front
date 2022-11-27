@@ -1,0 +1,27 @@
+// Import Fonts
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@300&display=swap');
+$heading-font: 'Rubik', sans-serif;
+$body-font: 'Karla', sans-serif;
+
+// Color Variables
+$background-color: #edf2f4;
+$background-wraper-color: #004e98;
+$default-text-color: #252525;
+$aside-text-color: #ebebeb;
+$label-text-color: #7b878f;
+
+@mixin createFlex(
+	$direction: null,
+	$wrap: nowrap,
+	$alignContent: null,
+	$justifyContent: nulll,
+	$alignItems: null
+) {
+	display: flex;
+	flex-direction: $direction;
+	flex-wrap: $wrap;
+	align-content: $alignContent;
+	justify-content: $justifyContent;
+	align-items: $alignItems;
+}
