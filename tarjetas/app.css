@@ -1,0 +1,10 @@
+.App{
+    background-color: rgb(25, 44, 136);
+}
+.carta{
+    margin-top: 50px;
+    background-color: rgb(1, 162, 255);
+    padding: 3px 10px;
+    border: PowderBlue 5px solid;
+    border-radius: 20px;
+}
